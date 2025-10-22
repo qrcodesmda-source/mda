@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>M'AR De AR Aqueduto — Bem‑vindo | Welcome</title>
+  <meta name="description" content="Aceda rapidamente à ementa do Degust'AR, Spa Aqueduto, Kids e informação útil." />
+  <meta property="og:title" content="M'AR De AR Aqueduto — QR para Hóspedes" />
+  <meta property="og:description" content="Ementas, spa, kids e informação útil." />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root{--bg:#0b1020;--card:#111831;--muted:#94a3b8;--text:#e5e7eb;--radius:16px}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:radial-gradient(1200px 800px at 10% -10%,#1b254b,transparent),radial-gradient(1000px 600px at 120% 0%,#0f1536,transparent),var(--bg);color:var(--text)}
+    .wrap{max-width:960px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:14px 0 24px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:12px;background:#0ea5e9;display:grid;place-items:center;color:white;font-weight:700}
+    h1{font-weight:700;margin:0;font-size:clamp(20px,3vw,28px)}
+    .lang{display:flex;gap:8px}
+    .btn{background:#0f172a;color:var(--text);border:1px solid #1f2937;border-radius:12px;padding:10px 14px;font-weight:600;cursor:pointer}
+    .btn[aria-pressed="true"]{outline:2px solid #60a5fa}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    @media (max-width:720px){.grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));border:1px solid #1f2937;border-radius:var(--radius);padding:18px}
+    .card h2{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:rgba(96,165,250,.12);border:1px solid rgba(148,163,184,.25);padding:10px 12px;border-radius:12px;color:var(--text)}
+    .pill{display:inline-block;background:rgba(148,163,184,.15);border:1px solid rgba(148,163,184,.25);color:var(--muted);padding:4px 8px;border-radius:999px;font-size:12px;margin-left:8px}
+    footer{margin:28px 0 8px;color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,#1f2937,transparent);margin:18px 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AQ</div>
+        <div>
+          <h1 data-i18n="welcome">Bem‑vindo ao M'AR De AR Aqueduto</h1>
+          <div class="pill" id="roomPill" style="display:none"></div>
+        </div>
+      </div>
+      <div class="lang" aria-label="Selecionar idioma / Select language">
+        <button id="pt" class="btn" aria-pressed="true">PT</button>
+        <button id="en" class="btn" aria-pressed="false">EN</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>🍽️ <span data-i18n="restaurant">Restaurante Degust'AR</span></h2>
+        <p data-i18n="restaurant_desc">Veja a ementa atualizada, alergénios e sugestões do chef.</p>
+        <div class="cta">
+          <a class="link" id="link_menu" href="https://mardearhotels.com/aqueduto-degustar-restaurante/" target="_blank" rel="noopener" data-i18n="menu">Ementa</a>
+          <a class="link" id="link_wine" href="https://mardearhotels.com/restaurantes/" target="_blank" rel="noopener" data-i18n="wine">Carta de vinhos</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>💆 <span data-i18n="spa">Spa & Wellness Aqueduto</span> <span class="pill" data-i18n="booking_required">Reserva necessária</span></h2>
+        <p data-i18n="spa_desc">Tratamentos, horários e preços. Marque a sua sessão.</p>
+        <div class="cta">
+          <a class="link" id="link_spa_menu" href="https://mardearhotels.com/spa-aqueduto/" target="_blank" rel="noopener" data-i18n="spa_menu">Menu de tratamentos</a>
+          <a class="link" id="link_spa_booking" href="https://mardearhotels.com/spa-aqueduto/#book" target="_blank" rel="noopener" data-i18n="spa_book">Reservar</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>🧸 <span data-i18n="kids">Kids & Família</span></h2>
+        <p data-i18n="kids_desc">Condições, faixas etárias, horários e atividades.</p>
+        <div class="cta">
+          <a class="link" id="link_kids" href="https://mardearhotels.com/momentos-em-familia-com-magia-e-diversao/" target="_blank" rel="noopener" data-i18n="kids_rules">Programa Família</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>ℹ️ <span data-i18n="info">Informação útil</span></h2>
+        <p data-i18n="info_desc">Wi‑Fi, horários do pequeno‑almoço, piscina, regras da casa, contactos.</p>
+        <div class="cta">
+          <a class="link" id="link_info" href="https://mardearhotels.com/mar-de-ar-aqueduto/" target="_blank" rel="noopener" data-i18n="wifi">Página do hotel</a>
+          <a class="link" id="link_offers" href="https://mardearhotels.com/ofertas-experiencias/" target="_blank" rel="noopener" data-i18n="see_offers">Ofertas & Experiências</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>📝 <span data-i18n="feedback">Feedback & Pedidos</span></h2>
+        <p data-i18n="feedback_desc">Diga‑nos como melhorar ou faça um pedido especial.</p>
+        <div class="cta">
+          <a class="link" id="link_feedback" href="#" target="_blank" rel="noopener" data-i18n="leave_feedback">Deixar feedback</a>
+          <a class="link" id="link_contact" href="https://mardearhotels.com/presentation/" target="_blank" rel="noopener" data-i18n="chat">Contactos</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="divider"></div>
+    <footer>
+      <span data-i18n="privacy">Respeitamos a sua privacidade. Sem cookies de rastreamento.</span>
+    </footer>
+  </div>
+
+  <script>
+    const STRINGS = {
+      pt: { welcome: "Bem‑vindo ao M'AR De AR Aqueduto", restaurant: "Restaurante Degust'AR", restaurant_desc: "Veja a ementa atualizada, alergénios e sugestões do chef.", menu: "Ementa", wine: "Carta de vinhos", spa: "Spa & Wellness Aqueduto", booking_required: "Reserva necessária", spa_desc: "Tratamentos, horários e preços. Marque a sua sessão.", spa_menu: "Menu de tratamentos", spa_book: "Reservar", kids: "Kids & Família", kids_desc: "Condições, faixas etárias, horários e atividades.", kids_rules: "Programa Família", info: "Informação útil", info_desc: "Wi‑Fi, horários do pequeno‑almoço, piscina, regras da casa, contactos.", wifi: "Página do hotel", see_offers: "Ofertas & Experiências", feedback: "Feedback & Pedidos", feedback_desc: "Diga‑nos como melhorar ou faça um pedido especial.", leave_feedback: "Deixar feedback", chat: "Contactos", privacy: "Respeitamos a sua privacidade. Sem cookies de rastreamento." },
+      en: { welcome: "Welcome to M'AR De AR Aqueduto", restaurant: "Degust'AR Restaurant", restaurant_desc: "See today's menu, allergens and chef's picks.", menu: "Menu", wine: "Wine list", spa: "Aqueduto Spa & Wellness", booking_required: "Booking required", spa_desc: "Treatments, hours and prices. Book your session.", spa_menu: "Treatment menu", spa_book: "Book", kids: "Kids & Family", kids_desc: "Terms, ages, hours and activities.", kids_rules: "Family Program", info: "Useful info", info_desc: "Wi‑Fi, breakfast hours, pool, house rules, contacts.", wifi: "Hotel page", see_offers: "Offers & Experiences", feedback: "Feedback & Requests", feedback_desc: "Tell us how to improve or make a special request.", leave_feedback: "Leave feedback", chat: "Contacts", privacy: "We respect your privacy. No tracking cookies." }
+    };
+
+    const $ = (id)=>document.getElementById(id);
+    function applyLang(lang){
+      document.documentElement.lang = lang;
+      const nodes = document.querySelectorAll('[data-i18n]');
+      nodes.forEach(el=>{ const key=el.getAttribute('data-i18n'); if(STRINGS[lang][key]) el.textContent=STRINGS[lang][key]; });
+      $('pt').setAttribute('aria-pressed', lang==='pt');
+      $('en').setAttribute('aria-pressed', lang==='en');
+      localStorage.setItem('lang_aq', lang);
+      // swap restaurant links and spa links to EN when needed
+      if(lang==='en'){
+        $('#link_menu').href='https://mardearhotels.com/en/aqueduto-degustar-restaurante/';
+        $('#link_wine').href='https://mardearhotels.com/en/restaurantes/';
+        $('#link_spa_menu').href='https://mardearhotels.com/en/spa-aqueduto/';
+        $('#link_spa_booking').href='https://mardearhotels.com/en/spa-aqueduto/#book';
+        $('#link_info').href='https://mardearhotels.com/en/mar-de-ar-aqueduto/';
+        $('#link_offers').href='https://mardearhotels.com/en/offers-experiences/';
+        $('#link_kids').href='https://mardearhotels.com/en/momentos-em-familia-com-magia-e-diversao/';
+        $('#link_contact').href='https://mardearhotels.com/en/presentation/';
+      } else {
+        $('#link_menu').href='https://mardearhotels.com/aqueduto-degustar-restaurante/';
+        $('#link_wine').href='https://mardearhotels.com/restaurantes/';
+        $('#link_spa_menu').href='https://mardearhotels.com/spa-aqueduto/';
+        $('#link_spa_booking').href='https://mardearhotels.com/spa-aqueduto/#book';
+        $('#link_info').href='https://mardearhotels.com/mar-de-ar-aqueduto/';
+        $('#link_offers').href='https://mardearhotels.com/ofertas-experiencias/';
+        $('#link_kids').href='https://mardearhotels.com/momentos-em-familia-com-magia-e-diversao/';
+        $('#link_contact').href='https://mardearhotels.com/presentation/';
+      }
+    }
+    const saved = localStorage.getItem('lang_aq') || (navigator.language||'pt').slice(0,2);
+    applyLang(saved==='en'?'en':'pt');
+    $('pt').addEventListener('click',()=>applyLang('pt'));
+    $('en').addEventListener('click',()=>applyLang('en'));
+
+    // room param
+    const params = new URLSearchParams(location.search);
+    const room = params.get('room');
+    if(room){ const pill=$('roomPill'); pill.textContent=`Quarto • Room ${room}`; pill.style.display='inline-block'; }
+  </script>
+</body>
+</html>
