@@ -10,25 +10,17 @@
   <meta name="theme-color" content="#0f172a" />
   <style>
 :root{
-  /* BASE */
-  --bg:#8A9998;         /* fundo sólido (mantém) */
-  --card:#6F7B7A;       /* cartões um pouco mais escuros */
-  --card-border:#455150;
-  --text:#F7FAF9;       /* texto principal bem legível */
-  --muted:#D8E0DF;      /* texto secundário */
-
-  /* ACCENTS (ação) – podes ajustar por hotel abaixo */
-  --accent:#1E8E8C;     /* teal elegante para botões/links */
-  --accent-hover:#187977;
-
-  /* BOTÕES / CHIPS */
-  --chip-bg:#D1DADA; 
-  --chip-text:#2B3A39;
-
+  --bg:#8A9998;
+  --card:#F5F5F5;
+  --card-border:#D0D7D6;
+  --text:#2E2E2E;
+  --muted:#4E4E4E;
+  --accent:#006D6F;
+  --accent-hover:#005557;
   --radius:16px;
 }
 
-/* Fundo sólido (sem gradiente) */
+/* Fundo sólido */
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
@@ -42,33 +34,24 @@ body{
   border:1px solid var(--card-border);
   border-radius:var(--radius);
   padding:18px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
 }
 .card p{ color:var(--muted); }
 
-/* Botões/links de ação */
+/* Botões */
 .link,.btn{
   background:var(--accent);
-  border:1px solid rgba(0,0,0,.15);
-  color:#ffffff!important;
+  border:none;
+  color:#fff!important;
   border-radius:12px;
-  padding:10px 12px;
+  padding:10px 14px;
+  font-weight:600;
+  text-decoration:none;
 }
 .link:hover,.btn:hover{ background:var(--accent-hover); }
 
-/* Chips (ex.: “Reserva necessária”, nº quarto) */
-.pill{
-  background:var(--chip-bg);
-  color:var(--chip-text);
-  border:1px solid rgba(0,0,0,.1);
-}
-
-/* Botões de idioma mais neutros */
-.lang .btn{
-  background:#2B3534;
-  border-color:#3B4746;
-}
-.lang .btn[aria-pressed="true"]{ outline:2px solid var(--accent); }
-
+/* Títulos */
+h2{color:var(--text);}
   </style>
 </head>
 <body>
