@@ -9,34 +9,66 @@
   <meta property="og:description" content="Ementas, spa, kids e informação útil." />
   <meta name="theme-color" content="#0f172a" />
   <style>
-    :root{
-  --bg:#8A9998;
-  --card:#9AA9A8;
-  --muted:#55605F;
-  --text:#ffffff;
+:root{
+  /* BASE */
+  --bg:#8A9998;         /* fundo sólido (mantém) */
+  --card:#6F7B7A;       /* cartões um pouco mais escuros */
+  --card-border:#455150;
+  --text:#F7FAF9;       /* texto principal bem legível */
+  --muted:#D8E0DF;      /* texto secundário */
+
+  /* ACCENTS (ação) – podes ajustar por hotel abaixo */
+  --accent:#1E8E8C;     /* teal elegante para botões/links */
+  --accent-hover:#187977;
+
+  /* BOTÕES / CHIPS */
+  --chip-bg:#D1DADA; 
+  --chip-text:#2B3A39;
+
   --radius:16px;
 }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:960px;margin:0 auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:14px 0 24px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:48px;height:48px;border-radius:12px;background:#0ea5e9;display:grid;place-items:center;color:white;font-weight:700}
-    h1{font-weight:700;margin:0;font-size:clamp(20px,3vw,28px)}
-    .lang{display:flex;gap:8px}
-    .btn{background:#0f172a;color:var(--text);border:1px solid #1f2937;border-radius:12px;padding:10px 14px;font-weight:600;cursor:pointer}
-    .btn[aria-pressed="true"]{outline:2px solid #60a5fa}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-    @media (max-width:720px){.grid{grid-template-columns:1fr}}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));border:1px solid #1f2937;border-radius:var(--radius);padding:18px}
-    .card h2{margin:0 0 8px;font-size:18px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:rgba(96,165,250,.12);border:1px solid rgba(148,163,184,.25);padding:10px 12px;border-radius:12px;color:var(--text)}
-    .pill{display:inline-block;background:rgba(148,163,184,.15);border:1px solid rgba(148,163,184,.25);color:var(--muted);padding:4px 8px;border-radius:999px;font-size:12px;margin-left:8px}
-    footer{margin:28px 0 8px;color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
-    .divider{height:1px;background:linear-gradient(90deg,transparent,#1f2937,transparent);margin:18px 0}
+
+/* Fundo sólido (sem gradiente) */
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* Cartões */
+.card{
+  background:var(--card);
+  border:1px solid var(--card-border);
+  border-radius:var(--radius);
+  padding:18px;
+}
+.card p{ color:var(--muted); }
+
+/* Botões/links de ação */
+.link,.btn{
+  background:var(--accent);
+  border:1px solid rgba(0,0,0,.15);
+  color:#ffffff!important;
+  border-radius:12px;
+  padding:10px 12px;
+}
+.link:hover,.btn:hover{ background:var(--accent-hover); }
+
+/* Chips (ex.: “Reserva necessária”, nº quarto) */
+.pill{
+  background:var(--chip-bg);
+  color:var(--chip-text);
+  border:1px solid rgba(0,0,0,.1);
+}
+
+/* Botões de idioma mais neutros */
+.lang .btn{
+  background:#2B3534;
+  border-color:#3B4746;
+}
+.lang .btn[aria-pressed="true"]{ outline:2px solid var(--accent); }
+
   </style>
 </head>
 <body>
